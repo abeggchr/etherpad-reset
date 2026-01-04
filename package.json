@@ -1,0 +1,22 @@
+{
+  "name": "etherpad-reset",
+  "version": "1.0.0",
+  "description": "Resets the contents of an etherpad pad",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abeggchr/etherpad-reset.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abeggchr/etherpad-reset/issues"
+  },
+  "homepage": "https://github.com/abeggchr/etherpad-reset#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3"
+  }
+}
