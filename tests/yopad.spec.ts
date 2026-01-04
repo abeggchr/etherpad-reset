@@ -38,14 +38,14 @@ async function createFile() {
 
   const today = new Date();
   const now = today.toLocaleDateString('de-CH') + " " + today.toLocaleTimeString('de-CH');
-  let content = templateContent.replace('{{now}}', now);
+  let content = templateContent.replaceAll('{{now}}', now);
 
   ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].forEach((day:string, index:number) => {
     const daysUntilDay = ((7+index) - today.getDay()) % 7 || 7;
     const date = new Date(today);
     date.setDate(today.getDate() + daysUntilDay);
     const localeDateString = date.toLocaleDateString('de-CH', options);
-    content = content.replace(`{{${day}}}`, localeDateString);
+    content = content.replaceAll(`{{${day}}}`, localeDateString);
   });
   
   const tempDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'playwright-'));
