@@ -40,7 +40,7 @@ jobs:
       run: npx playwright install chromium --with-deps
     - name: Run Playwright tests
       if: steps.check_week.outputs.run_it == 'true'
-      run: npx playwright test
+      run: npx playwright test --fail-on-flaky-tests
     - uses: actions/upload-artifact@v4
       if: steps.check_week.outputs.run_it == 'true' && !cancelled()
       with:
