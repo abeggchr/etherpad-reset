@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0 9 * * 5'  # Every Friday at 9 AM UTC
+    - cron: '0 9 * * *'  # Every Friday at 9 AM UTC
 jobs:
   test:
     timeout-minutes: 10
