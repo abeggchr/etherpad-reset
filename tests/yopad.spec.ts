@@ -23,6 +23,8 @@ test('reset', async ({ page }) => {
 
   page.on('dialog', dialog => dialog.accept());
   await page.locator('#importsubmitinput').click();
+  
+  await page.waitForTimeout(1000);
 });
 
 async function createFile() {
