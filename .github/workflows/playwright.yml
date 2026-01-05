@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0 9 * * *'  # Every Friday at 9 AM UTC
+    - cron: '0 1 * * *'  # Every Sunday (0) at 1 AM UTC, see https://crontab.guru/#0_1_*_*_0
 jobs:
   test:
     timeout-minutes: 10
