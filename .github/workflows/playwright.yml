@@ -17,10 +17,10 @@ jobs:
           echo "Current ISO week: $WEEK"
           # Run only if week is between 13 and 45 inclusive
           if [ "$WEEK" -ge 13 ] && [ "$WEEK" -le 45 ]; then
-            echo "run_it=false" >> $GITHUB_OUTPUT
+            echo "run_it=true" >> $GITHUB_OUTPUT
           else
             echo "Skipping: Week $WEEK is outside the range 13-45"
-            echo "run_it=false" >> $GITHUB_OUTPUT
+            echo "run_it=true" >> $GITHUB_OUTPUT
           fi
         else
           echo "Not a scheduled run, continuing..."
