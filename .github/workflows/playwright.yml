@@ -13,8 +13,8 @@ jobs:
         if [ "${{ github.event_name }}" == "schedule" ]; then
           WEEK=$(date +%V)
           echo "Current ISO week: $WEEK"
-          # Run only if week is between 13 and 45 inclusive
-          if [ "$WEEK" -ge 13 ] && [ "$WEEK" -le 45 ]; then
+          # Run only if week is between 8 and 45 inclusive
+          if [ "$WEEK" -ge 8 ] && [ "$WEEK" -le 45 ]; then
             echo "run_it=true" >> $GITHUB_OUTPUT
           else
             echo "Skipping: Week $WEEK is outside the range 13-45"
