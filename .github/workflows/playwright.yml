@@ -2,6 +2,8 @@ name: Playwright Tests
 on:
   schedule:
     - cron: '0 1 * * 0'  # Every Sunday (0) at 1 AM UTC, see https://crontab.guru/#0_1_*_*_0
+  workflow_dispatch:
+    
 jobs:
   test:
     timeout-minutes: 10
