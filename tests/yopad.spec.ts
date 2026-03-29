@@ -14,7 +14,9 @@ test('reset', async ({ page }) => {
   await expect(page).toHaveTitle(title);
 
   await page.locator('button[data-l10n-id="pad.toolbar.showusers.title"]').click();
-  await page.locator('#myusernameedit').fill('Reset');
+  const usernameInput = page.locator('#myusernameedit');
+  await usernameInput.waitFor({ state: 'visible' });
+  await usernameInput.fill('Reset');
   await page.locator('button[data-l10n-id="pad.toolbar.showusers.title"]').click();
 
   await page.locator('button[data-l10n-id="pad.toolbar.import_export.title"]').click();
