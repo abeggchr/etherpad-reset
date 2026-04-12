@@ -12,7 +12,13 @@ test('reset', async ({ page }) => {
   await page.goto(pad);
 
   await expect(page).toHaveTitle(title);
-  
+
+  await page.locator('button[data-l10n-id="pad.toolbar.showusers.title"]').click();
+  const usernameInput = page.locator('#myusernameedit');
+  await usernameInput.waitFor({ state: 'visible' });
+  await usernameInput.fill('Reset');
+  await page.locator('button[data-l10n-id="pad.toolbar.showusers.title"]').click();
+
   await page.locator('button[data-l10n-id="pad.toolbar.import_export.title"]').click();
   await page.locator('#importfileinput').click();
   await page.setInputFiles('#importfileinput', file);
