@@ -10,6 +10,7 @@ test('reset', async ({ page }) => {
   const file = await createFile();
 
   await page.goto(pad);
+  await expect(page.locator("#loading")).not.toBeVisible();
 
   await expect(page).toHaveTitle(title);
 
