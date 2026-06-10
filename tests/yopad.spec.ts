@@ -3,8 +3,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as os from 'os';
 
-const pad = 'https://yopad.eu/p/test-cha';
-const title = /test-cha/;
+const pad = 'https://yopad.eu/p/boule-horw-365days';
+const title = /boule-horw-365days/;
 
 test('reset', async ({ page }) => {
   const file = await createFile();
