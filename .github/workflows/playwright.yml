@@ -8,6 +8,8 @@ jobs:
   test:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    container: 
+      image: mcr.microsoft.com/playwright:v1.57.0-noble
     steps:
     - name: Check Week Number
       id: check_week
@@ -35,9 +37,6 @@ jobs:
     - name: Install dependencies
       if: steps.check_week.outputs.run_it == 'true'
       run: npm ci
-    - name: Install Playwright Browsers
-      if: steps.check_week.outputs.run_it == 'true'
-      run: npx playwright install chromium --with-deps
     - name: Run Playwright tests
       if: steps.check_week.outputs.run_it == 'true'
       run: npx playwright test --fail-on-flaky-tests
